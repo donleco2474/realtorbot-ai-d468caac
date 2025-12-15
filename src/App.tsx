@@ -12,8 +12,9 @@ import HotLeads from "./pages/HotLeads";
 import Conversations from "./pages/Conversations";
 import Campaigns from "./pages/Campaigns";
 import Settings from "./pages/Settings";
+import Subscribe from "./pages/Subscribe";
+import PaymentSuccess from "./pages/PaymentSuccess";
 import NotFound from "./pages/NotFound";
-
 const queryClient = new QueryClient();
 
 function App() {
@@ -27,6 +28,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/auth" element={<Auth />} />
+              <Route path="/subscribe" element={<Subscribe />} />
+              <Route path="/payment-success" element={<PaymentSuccess />} />
               <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
               <Route path="/dashboard/hot-leads" element={<ProtectedRoute><HotLeads /></ProtectedRoute>} />
               <Route path="/dashboard/conversations" element={<ProtectedRoute><Conversations /></ProtectedRoute>} />

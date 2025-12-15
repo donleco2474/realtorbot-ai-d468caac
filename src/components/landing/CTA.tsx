@@ -22,14 +22,14 @@ export function CTA() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="accent" size="xl" asChild>
-                <Link to="/auth">
-                  Start Your Free Trial
+                <Link to="/subscribe">
+                  Get Started - ₦40,000 for 4 Months
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
             </div>
             <p className="text-sm text-primary-foreground/60 mt-6">
-              No credit card required • Free 14-day trial • Cancel anytime
+              Limited launch offer • Save ₦20,000 • Full access included
             </p>
           </div>
         </div>
