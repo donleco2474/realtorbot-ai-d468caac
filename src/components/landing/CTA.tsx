@@ -22,7 +22,7 @@ export function CTA() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="accent" size="xl" asChild>
-                <Link to="/dashboard">
+                <Link to="/auth">
                   Start Your Free Trial
                   <ArrowRight className="w-5 h-5" />
                 </Link>

@@ -37,13 +37,13 @@ export function Hero() {
           {/* CTA Buttons */}
           <div className="animate-slide-up flex flex-col sm:flex-row gap-4 justify-center mb-16" style={{ animationDelay: '0.2s' }}>
             <Button variant="hero" size="xl" asChild>
-              <Link to="/dashboard">
+              <Link to="/auth">
                 Start Free Trial
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </Button>
             <Button variant="hero-outline" size="xl" asChild>
-              <Link to="/dashboard">
+              <Link to="/auth">
                 View Demo
               </Link>
             </Button>
