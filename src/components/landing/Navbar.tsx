@@ -45,7 +45,7 @@ export function Navbar() {
                   <Link to="/auth">Sign In</Link>
                 </Button>
                 <Button variant="default" asChild>
-                  <Link to="/auth">Get Started</Link>
+                  <Link to="/subscribe">Get Started</Link>
                 </Button>
               </>
             )}
