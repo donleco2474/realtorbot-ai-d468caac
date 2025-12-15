@@ -124,33 +124,84 @@ export type Database = {
         }
         Relationships: []
       }
+      payments: {
+        Row: {
+          amount: number
+          created_at: string
+          currency: string
+          id: string
+          metadata: Json | null
+          paystack_reference: string | null
+          reference: string
+          status: string
+          updated_at: string
+          upsell_selected: boolean | null
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          currency?: string
+          id?: string
+          metadata?: Json | null
+          paystack_reference?: string | null
+          reference: string
+          status?: string
+          updated_at?: string
+          upsell_selected?: boolean | null
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          id?: string
+          metadata?: Json | null
+          paystack_reference?: string | null
+          reference?: string
+          status?: string
+          updated_at?: string
+          upsell_selected?: boolean | null
+          user_id?: string
+        }
+        Relationships: []
+      }
       profiles: {
         Row: {
           calendar_link: string | null
           created_at: string
           full_name: string | null
           id: string
+          is_active: boolean | null
           phone_number: string | null
+          plan_expiry_date: string | null
           updated_at: string
           user_id: string
+          white_glove_setup_purchased: boolean | null
         }
         Insert: {
           calendar_link?: string | null
           created_at?: string
           full_name?: string | null
           id?: string
+          is_active?: boolean | null
           phone_number?: string | null
+          plan_expiry_date?: string | null
           updated_at?: string
           user_id: string
+          white_glove_setup_purchased?: boolean | null
         }
         Update: {
           calendar_link?: string | null
           created_at?: string
           full_name?: string | null
           id?: string
+          is_active?: boolean | null
           phone_number?: string | null
+          plan_expiry_date?: string | null
           updated_at?: string
           user_id?: string
+          white_glove_setup_purchased?: boolean | null
         }
         Relationships: []
       }
