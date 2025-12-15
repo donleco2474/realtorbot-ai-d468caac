@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Zap } from "lucide-react";
+import { useAuth } from "@/hooks/useAuth";
 
 export function Navbar() {
+  const { user, loading } = useAuth();
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass">
       <div className="container mx-auto px-4">
@@ -30,12 +33,22 @@ export function Navbar() {
 
           {/* Actions */}
           <div className="flex items-center gap-4">
-            <Button variant="ghost" asChild>
-              <Link to="/dashboard">Sign In</Link>
-            </Button>
-            <Button variant="default" asChild>
-              <Link to="/dashboard">Get Started</Link>
-            </Button>
+            {loading ? (
+              <div className="w-20 h-9 bg-secondary/50 animate-pulse rounded-lg" />
+            ) : user ? (
+              <Button variant="default" asChild>
+                <Link to="/dashboard">Dashboard</Link>
+              </Button>
+            ) : (
+              <>
+                <Button variant="ghost" asChild>
+                  <Link to="/auth">Sign In</Link>
+                </Button>
+                <Button variant="default" asChild>
+                  <Link to="/auth">Get Started</Link>
+                </Button>
+              </>
+            )}
           </div>
         </div>
       </div>

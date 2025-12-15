@@ -14,7 +14,179 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      conversations: {
+        Row: {
+          ai_analysis: string | null
+          created_at: string
+          id: string
+          lead_id: string | null
+          message: string
+          message_type: string
+          user_id: string
+        }
+        Insert: {
+          ai_analysis?: string | null
+          created_at?: string
+          id?: string
+          lead_id?: string | null
+          message: string
+          message_type: string
+          user_id: string
+        }
+        Update: {
+          ai_analysis?: string | null
+          created_at?: string
+          id?: string
+          lead_id?: string | null
+          message?: string
+          message_type?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "conversations_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      drip_campaigns: {
+        Row: {
+          created_at: string
+          day: number
+          enabled: boolean | null
+          id: string
+          message_template: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          day: number
+          enabled?: boolean | null
+          id?: string
+          message_template: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          day?: number
+          enabled?: boolean | null
+          id?: string
+          message_template?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      leads: {
+        Row: {
+          area: string | null
+          created_at: string
+          drip_day: number | null
+          drip_paused: boolean | null
+          id: string
+          lead_score: string | null
+          name: string
+          phone: string
+          status: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          area?: string | null
+          created_at?: string
+          drip_day?: number | null
+          drip_paused?: boolean | null
+          id?: string
+          lead_score?: string | null
+          name: string
+          phone: string
+          status?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          area?: string | null
+          created_at?: string
+          drip_day?: number | null
+          drip_paused?: boolean | null
+          id?: string
+          lead_score?: string | null
+          name?: string
+          phone?: string
+          status?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          calendar_link: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          phone_number: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          calendar_link?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          phone_number?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          calendar_link?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          phone_number?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_settings: {
+        Row: {
+          created_at: string
+          google_connected: boolean | null
+          id: string
+          notification_phone: string | null
+          openai_api_key_configured: boolean | null
+          updated_at: string
+          user_id: string
+          wasender_api_key_configured: boolean | null
+        }
+        Insert: {
+          created_at?: string
+          google_connected?: boolean | null
+          id?: string
+          notification_phone?: string | null
+          openai_api_key_configured?: boolean | null
+          updated_at?: string
+          user_id: string
+          wasender_api_key_configured?: boolean | null
+        }
+        Update: {
+          created_at?: string
+          google_connected?: boolean | null
+          id?: string
+          notification_phone?: string | null
+          openai_api_key_configured?: boolean | null
+          updated_at?: string
+          user_id?: string
+          wasender_api_key_configured?: boolean | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
