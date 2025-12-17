@@ -3,6 +3,7 @@ import { DashboardLayout } from "@/components/dashboard/DashboardLayout";
 import { MetricCard } from "@/components/dashboard/MetricCard";
 import { HotLeadsTable } from "@/components/dashboard/HotLeadsTable";
 import { RecentActivity } from "@/components/dashboard/RecentActivity";
+import { SubscriptionStatus } from "@/components/dashboard/SubscriptionStatus";
 import { SetupWizard } from "@/components/setup/SetupWizard";
 import { Users, Flame, Send, MessageSquare } from "lucide-react";
 
@@ -16,6 +17,9 @@ const Dashboard = () => {
   return (
     <DashboardLayout>
       <div className="space-y-6">
+        {/* Subscription Status */}
+        <SubscriptionStatus />
+
         {/* Metrics Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           <MetricCard
